@@ -21,7 +21,10 @@
 > 9. Open up a command prompt and type g++ --version to check g++ is installed. Type gdb --version to check that gdb is installed.
  
 ### 4. Download the Development SDL Library
-> Download SDL from the link highlighted in the below picture:
+> Go to the link below and download the SDL version highlighted in the below picture:
+> 
+> https://www.libsdl.org/download-2.0.php
+> 
 > ![An image showing the correct link to download](https://github.com/MichaelRRyan/SDL2-Make-Gameloop/blob/Images/download_link.png)
 
 ### 5. Set up SDL
