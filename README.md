@@ -22,8 +22,7 @@
  
 ### 4. Download the Development SDL Library
 > Download SDL from the link highlighted in the below picture:
->
-> [To be added]
+> ![An image showing the correct link to download](https://github.com/MichaelRRyan/SDL2-Make-Gameloop/blob/Images/download_link.png)
 
 ### 5. Set up SDL
 > 1. Unzip the downloaded file until you have a plain folder (you will need to unzip the unzipped file).
@@ -32,7 +31,7 @@
 > 4. Add the value of "C:\SDL2-2.0.16\i686-w64-mingw32\bin" to the system environment path.
 
 ### 6. Download project files and build (This is a placeholder for more detailed instructions on creating the project)
-> 1. Clone this repo: https://github.com/MichaelRRyan/SDL2-Make-Gameloop
+> 1. Clone down this repo.
 > 2. Open MSYS2 and navigate into the repo's folder.
 > 3. Type "make" and hit enter.
 >
