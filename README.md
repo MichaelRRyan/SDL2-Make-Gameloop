@@ -26,7 +26,9 @@
 > 
 > https://www.libsdl.org/download-2.0.php
 > 
-> ![An image showing the correct link to download](https://github.com/MichaelRRyan/SDL2-Make-Gameloop/blob/Images/download_link.png)
+> ![SDL2-devel-2.0.16-mingw.tar.gz (MinGW 32/64-bit)](https://github.com/MichaelRRyan/SDL2-Make-Gameloop/blob/Images/download_link.png)
+>
+>  *If the image doesn't load view it in markdown [here](https://github.com/MichaelRRyan/SDL2-Make-Gameloop).*
 
 ### 5. Set up SDL
 > 1. Unzip the downloaded file until you have a plain folder (you will need to unzip the unzipped file).
