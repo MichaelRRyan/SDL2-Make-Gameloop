@@ -1,4 +1,5 @@
-# Instructions for Use
+# SDL and Make Setup
+[(View as a Web Page)](https://www.michaelrryan.com/SDL2-Make-Gameloop)
 
 ### 1. Download and install VS code:
 > https://code.visualstudio.com/Download
@@ -9,7 +10,7 @@
 ### 3. Install MSYS2 (following steps taken from the bottom of Phil's notes):
 > 1. Download Msys from https://www.msys2.org/
 >
-> *NOTE Msys is a helpful installer that uses a package manager called `pacman'. Pacman is used in Arch Linux for package management.*
+> *NOTE Msys is a helpful installer that uses a package manager called 'pacman'. Pacman is used in Arch Linux for package management.*
 >
 > 2. Run the Msys terminal
 > 3. Update the package database and base packages type pacman -Syu
