@@ -38,7 +38,7 @@
 > Run ```pacman -S make``` in a MSYS terminal to install make.
 
 ### 7. Download project files and build (This is a placeholder for more detailed instructions on creating the project)
-> 1. Clone down this repo.
+> 1. Clone down [this repo](https://github.com/MichaelRRyan/SDL2-Make-Gameloop).
 > 2. Open MSYS2 and navigate into the repo's folder.
 > 3. Type "make" and hit enter.
 >
