@@ -33,7 +33,10 @@
 > 3. Create a new environment variable with the name "SDL_SDK" and the value of "C:\SDL2-2.0.16\i686-w64-mingw32"
 > 4. Add the value of "C:\SDL2-2.0.16\i686-w64-mingw32\bin" to the system environment path.
 
-### 6. Download project files and build (This is a placeholder for more detailed instructions on creating the project)
+### 6. Install Make
+> Run ```pacman -S make``` in a MSYS terminal to install make.
+
+### 7. Download project files and build (This is a placeholder for more detailed instructions on creating the project)
 > 1. Clone down this repo.
 > 2. Open MSYS2 and navigate into the repo's folder.
 > 3. Type "make" and hit enter.
