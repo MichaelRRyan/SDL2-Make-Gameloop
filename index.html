@@ -50,7 +50,7 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
     <script>
-        jQuery.get('/README.md', (data) => {
+        jQuery.get('https://raw.githubusercontent.com/MichaelRRyan/SDL2-Make-Gameloop/master/README.md', (data) => {
             $('article').append(marked(data));
         });
     </script>
