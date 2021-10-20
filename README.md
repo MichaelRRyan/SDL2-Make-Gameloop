@@ -26,7 +26,7 @@
 > 
 > https://www.libsdl.org/download-2.0.php
 > 
-> ![Download the link ```SDL2-devel-2.0.16-mingw.tar.gz (MinGW 32/64-bit)```](https://github.com/MichaelRRyan/SDL2-Make-Gameloop/blob/Images/download_link.png)
+> ![Download the link "SDL2-devel-2.0.16-mingw.tar.gz (MinGW 32/64-bit)"](https://github.com/MichaelRRyan/SDL2-Make-Gameloop/blob/Images/download_link.png)
 >
 >  *If the image doesn't load view it in markdown [here](https://github.com/MichaelRRyan/SDL2-Make-Gameloop).*
 
