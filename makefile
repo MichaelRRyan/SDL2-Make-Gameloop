@@ -1,21 +1,27 @@
-BUILD_DIR	:= ./bin
-SRC_DIR		:= ./src
+CXX			:= g++
 
-OUTPUT_NAME	:= "firstApp"
-COMP_FILES	:= ${SRC_DIR}/main.cpp ${SRC_DIR}/Game.cpp
+SDL_CFLAGS := $(shell sdl2-config --cflags)
+SDL_LDFLAGS := $(shell sdl2-config --libs) -lSDL2_image -lSDL2_ttf
 
-INCLUDE		:= "C:\SDL2-2.0.16\i686-w64-mingw32\include\SDL2"
-LIB			:= "C:\SDL2-2.0.16\i686-w64-mingw32\lib"
-DLL			:= "-lmingw32" "-lSDL2main" "-lSDL2"
+CXXFLAGS 	:= -I. -I./include ${SDL_CFLAGS} ${SDL_LDFLAGS}
 
 MSG_START	:= "Build Started"
 MSG_END		:= "Build Complete"
 MSG_CLEAN	:= "Cleaning up"
 
+BUILD_DIR	:= ./bin
+SRC_DIR		:= ./src
+
+TARGET		:= ${BUILD_DIR}/app
+
+SRC			:= ${SRC_DIR}/*.cpp
+
 all			:= build
 
 build:
 	@echo ${MSG_START}
+
+	@echo ${CXXFLAGS}
 
 	#remove directory if it exits and then create directory
 	rm -rf ${BUILD_DIR} || true
@@ -23,5 +29,6 @@ build:
 	#create bin directory
 	mkdir ${BUILD_DIR}
 
-	g++ -o ${BUILD_DIR}/${OUTPUT_NAME} ${COMP_FILES} -I${INCLUDE} -L${LIB} $(DLL)
+	${CXX} -o ${TARGET} ${SRC} ${CXXFLAGS}
 	@echo ${MSG_END}
+	${TARGET}
