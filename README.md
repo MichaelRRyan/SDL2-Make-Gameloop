@@ -1,5 +1,5 @@
 # SDL and Make Setup
-[(View as a Web Page)](https://www.michaelrryan.com/SDL2-Make-Gameloop)
+[View as a Web Page](https://www.michaelrryan.com/SDL2-Make-Gameloop) • [View as Markdown](https://github.com/MichaelRRyan/SDL2-Make-Gameloop)
 
 ### 1. Download and install VS code:
 > https://code.visualstudio.com/Download
@@ -10,38 +10,45 @@
 ### 3. Install MSYS2 (following steps taken from the bottom of Phil's notes):
 > 1. Download Msys from https://www.msys2.org/
 >
-> *NOTE Msys is a helpful installer that uses a package manager called 'pacman'. Pacman is used in Arch Linux for package management.*
->
-> 2. Run the Msys terminal
-> 3. Update the package database and base packages type ```pacman -Syu```
-> 4. Run "MSYS2 MSYS" and update the rest of the base packages with ```pacman -Su```
-> 5. Open "MSYS2 MSYS" terminal and type ```pacman -S mingw-w64-x86_64-gcc``` to install gcc / g++
-> 6. To install GDB Open "MSYS2 MSYS" terminal and type ```pacman -S mingw-w64-x86_64-gdb```
+> ***NOTE Msys is a helpful installer that uses a package manager called 'pacman'. Pacman is used in Arch Linux for package management.***
+> 
+> 2. Run the installer and go through the step by step process. This tutorial uses the install location of the root of the C: drive. If you use a different location you'll have to modify some paths.
+> 2. Once the install finishes, run the "MSYS2 MSYS" terminal.
+> 3. Update the package database and base packages type ```pacman -Syu```.
+> 4. Run "MSYS2 MSYS" and update the rest of the base packages with ```pacman -Su```.
+> 5. Open "MSYS2 MSYS" terminal and type ```pacman -S mingw-w64-x86_64-gcc``` to install gcc / g++.
+> 6. To install GDB Open "MSYS2 MSYS" terminal and type ```pacman -S mingw-w64-x86_64-gdb```.
 > 7. Open "MSYS 64" and type ```g++ --version``` to check g++ is installed. Type ```gdb --version``` to check that gdb is installed.
-> 8. Modify system path to include path to mingw64: ```C:\msys64\mingw64\bin```
+> 8. Modify system path to include path to mingw64: ```C:\msys64\mingw64\bin```.
 > 9. Open up a command prompt and type ```g++ --version``` to check g++ is installed. Type ```gdb --version``` to check that gdb is installed globally.
- 
-### 4. Download the Development SDL Library
-> Go to the link below and download the SDL version highlighted in the below picture:
-> 
-> https://www.libsdl.org/download-2.0.php
-> 
-> ![Download the link "SDL2-devel-2.0.16-mingw.tar.gz (MinGW 32/64-bit)"](https://github.com/MichaelRRyan/SDL2-Make-Gameloop/blob/Images/download_link.png)
->
->  *If the image doesn't load view it in markdown [here](https://github.com/MichaelRRyan/SDL2-Make-Gameloop).*
 
-### 5. Set up SDL
-> 1. Unzip the downloaded file until you have a plain folder (you will need to unzip the unzipped file).
-> 2. Move the folder "SDL2-2.0.16" from the unzipped folder to the root of your C drive.
-> 3. Create a new environment variable with the name ```SDL_SDK``` and the value of ```C:\SDL2-2.0.16\i686-w64-mingw32```
-> 4. Add the value of ```C:\SDL2-2.0.16\i686-w64-mingw32\bin``` to the system or user environment path.
+### 4. Download SDL
+> Open a "MSYS2 MSYS" terminal and install the necessary SDL packages with the following command:  
+> ```pacman -S mingw64/mingw-w64-x86_64-SDL2 mingw64/mingw-w64-x86_64-SDL2_mixer mingw64/mingw-w64-x86_64-SDL2_image mingw64/mingw-w64-x86_64-SDL2_ttf```
 
-### 6. Install Make
-> Run ```pacman -S make``` in a MSYS terminal to install make.
+### 5. Install Make
+> Open a "MSYS2 MSYS" terminal and run ```pacman -S make``` to install make.
 
-### 7. Download project files and build (This is a placeholder for more detailed instructions on creating the project)
+### 6. Download project files and build (This is a placeholder for more detailed instructions on creating the project)
 > 1. Clone down [this repo](https://github.com/MichaelRRyan/SDL2-Make-Gameloop).
 > 2. Open MSYS2 and navigate into the repo's folder with ```cd [folder location]``` (where [folder location] is your actual project folder path).
 > 3. Type ```make``` and hit enter.
 >
 > The project should build the executable to a "bin" folder in the repo's folder. Run this file to make sure it works, it should print out messages about updating and such.
+
+### OPTIONAL 7. Install SFML & Modify Make File
+> If you're like me and coming from an SFML background, it could be handy to have this package installed too. Having this package will allow you to build SFML projects the same way you would SDL projects.
+> 1. Open a "MSYS2 MSYS" terminal and run ```pacman -S mingw-w64-x86_64-sfml``` to install SFML.
+> 2. I've yet to figure out how to include SFML in the SDL make file without causing errors, so instead we'll replace the SDL includes.  
+> In the make file, delete line 3 and modify what used to be lines 4 and 6 to the following:  
+> ```
+> 1. CXX			:= g++
+> 2. 
+> 3. SFML_LDFLAGS := -lsfml-graphics -lsfml-window -lsfml-system
+> 4. 
+> 5. CXXFLAGS 	:= -I. -I./include ${SFML_LDFLAGS}
+> 6. 
+> 7. MSG_START	:= "Build Started"
+> ...
+> ```  
+> You'll have to test this with a different project that actually uses SFML, and remember this file expects a "include" and "src" folder structure.
