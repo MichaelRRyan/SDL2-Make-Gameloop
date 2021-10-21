@@ -49,6 +49,6 @@
 > 5. CXXFLAGS 	:= -I. -I./include ${SFML_LDFLAGS}
 > 6. 
 > 7. MSG_START	:= "Build Started"
-> ...
+> ...  
 > ```  
 > You'll have to test this with a different project that actually uses SFML, and remember this file expects a "include" and "src" folder structure.
